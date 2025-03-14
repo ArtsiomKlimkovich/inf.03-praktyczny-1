@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl_1.css">
+    <title>malarz</title>
+</head>
+<body>
+    <section class="baner">`
+        <h1>Malowanie pokoi i biur</h1>
+    </section>
+
+    <section style="display: flex;">
+        <section class="lewy">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="mieszamy.html">Mieszamy</a></li>
+                <li><a href="cena.html">Wyceniamy</a></li>
+            </ul>
+        </section>
+    
+        <section class="srodkowy">
+            <h2>Zapotrzebowanie na farbę</h2>
+            <label for="powierzchnia">Powierzchnia malowania(m<sup>2</sup>)</label>
+            <input type="number" name="powierzchnia" id="powierzchnia">
+            <button type="submit" onclick="show()">Policz</button>
+            <div id="res" style="padding-top: 10px;"></div>
+        </section>
+    
+        <section class="prawy">
+            <img src="obraz.png" alt="Próbki farb">
+        </section>
+    </section>
+
+    <section class="stopka">
+        <h3>MALARZ</h3>
+        <p>Stronę opracował: Artsiom Klimkovich</p>
+    </section>
+
+    <script>
+        let powierzchniaInput = document.getElementById("powierzchnia");
+        let res = document.getElementById("res");
+
+        function show() {
+            let powierzchniaValue = parseFloat(powierzchniaInput.value);
+            
+            res.innerText = "Liczba potrzebnych puszek: " + policz(powierzchniaValue);
+        }
+
+        function policz(powierzchnia) {
+            return Math.round(powierzchnia / 4);
+        }
+    </script>
+</body>
+</html>

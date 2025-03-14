@@ -1,0 +1,4 @@
+select cena, pojemnosc from farby where kolor = "czerwony";
+select kolor, (cena/pojemnosc) as "cena jednostkowa" from farby;
+select kolor, liczba_puszek from farby inner join malowanie on farby.id_farby = malowanie.id_farby where id_pomieszczenia = 3;
+create view pomieszczenie1 AS SELECT id_farby, id_sciany, liczba_puszek from malowanie where id_pomieszczenia = 1
